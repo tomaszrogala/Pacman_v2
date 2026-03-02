@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\io">
+      <UniqueIdentifier>{3e309032-6f76-420c-a235-944c6994d5d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{5c468823-ac8a-4885-b9df-83b6cd4e192b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities">
+      <UniqueIdentifier>{08107a73-06c6-4766-a99b-b9aacdb5a939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\state">
+      <UniqueIdentifier>{3e923427-f8a1-4f01-8e2f-547294162fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{f2be34d2-e5c7-4e26-aff8-c0b7bde550ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\helpers">
+      <UniqueIdentifier>{b80afd36-efb8-48a1-af09-b1c858702ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ai">
+      <UniqueIdentifier>{be38fd29-e429-4cd6-b307-6af3f308ee72}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ConsoleInput.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ConsoleRenderer.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="core\GameLoop.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\PlayerDecisionSystem.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\BotDecisionSystem.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\MovementSystem.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\CollisionSystem.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers\GameInitializer.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers\MapLoader.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="state\GameState.cpp">
+      <Filter>Source Files\state</Filter>
+    </ClCompile>
+    <ClCompile Include="core\ai\RandomStrategy.cpp">
+      <Filter>Source Files\core\ai</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="io\ConsoleInput.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ConsoleRenderer.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\IInput.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\IRenderer.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="core\GameLoop.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Pacman.h">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="state\GameConfig.h">
+      <Filter>Source Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\GameState.h">
+      <Filter>Source Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Direction.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Position2D.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="core\PlayerDecisionSystem.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\BotDecisionSystem.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Ghost.h">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="core\MovementSystem.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\CollisionSystem.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="state\Map.h">
+      <Filter>Source Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\Pellet.h">
+      <Filter>Source Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\Tile.h">
+      <Filter>Source Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers\GameInitializer.h">
+      <Filter>Source Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers\MapLoader.h">
+      <Filter>Source Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="core\ai\RandomStrategy.h">
+      <Filter>Source Files\core\ai</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
