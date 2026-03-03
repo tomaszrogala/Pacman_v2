@@ -4,5 +4,5 @@ class GameState;
 class BotDecisionSystem
 {
 public:
-    void update(GameState& state) const;
+    void update(GameState& a_state) const;
 };

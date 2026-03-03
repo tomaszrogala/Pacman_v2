@@ -8,9 +8,9 @@ struct Map;
 class GameInitializer
 {
 public:
-    static void initialize(GameState& state, const GameConfig& config);
+    static void initialize(GameState& a_state, const GameConfig& a_config);
 
 private:
-    static Position2D find_first_walkable_position(const Map& map);
-    static Position2D find_ghost_spawn_position(const Map& map);
+    static Position2D find_first_walkable_position(const Map& a_map);
+    static Position2D find_ghost_spawn_position(const Map& a_map);
 };

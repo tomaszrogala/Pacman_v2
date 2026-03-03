@@ -9,5 +9,5 @@
 class MapLoader
 {
 public:
-    static Map load_from_file(const std::string& path);
+    static Map load_from_file(const std::string& a_path);
 };

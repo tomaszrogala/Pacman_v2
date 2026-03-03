@@ -5,15 +5,15 @@
 enum class AiType
 {
 	RANDOM, 
-	//DIJKSTRA,
+	DIJKSTRA,
 };
 
 struct Ghost
 {
-    Direction m_direction; 
-	Position2D m_position;
+    Direction m_Direction; 
+    Position2D m_Position;
 
-	AiType m_ai_type;
+    AiType m_AiType;
 
 	//TODO:
 	/*int m_decision_periods_per_tick;  

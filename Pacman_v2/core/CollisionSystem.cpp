@@ -3,23 +3,23 @@
 
 void CollisionSystem::update(GameState& a_state) const
 {
-    auto& pacman_position = a_state.m_pacman.m_position;
+    auto& pacmanPosition = a_state.m_Pacman.m_Position;
 
-    if (a_state.m_map.is_pellet(pacman_position))
+    if (a_state.m_Map.is_pellet(pacmanPosition))
     {
-        a_state.m_map.erase_tile(pacman_position);
+        a_state.m_Map.erase_tile(pacmanPosition);
     }
 
-    if (a_state.m_map.is_power_pellet(pacman_position))
+    if (a_state.m_Map.is_power_pellet(pacmanPosition))
     {
-        a_state.m_map.erase_tile(pacman_position);
+        a_state.m_Map.erase_tile(pacmanPosition);
         //TODO: change pacman state
     }
 
-    for (auto& ghost : a_state.m_ghosts)
+    for (auto& ghost : a_state.m_Ghosts)
     {
         //TODO: if super pacman state, erase the ghost
-        if (ghost.m_position == pacman_position)
+        if (ghost.m_Position == pacmanPosition)
         {
             std::exit(0);
         }

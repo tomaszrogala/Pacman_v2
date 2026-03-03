@@ -2,11 +2,11 @@
 
 struct Position2D 
 {
-    int x;
-    int y;
+    int m_X;
+    int m_Y;
 
     bool operator == (const Position2D& a_right) const
     {
-        return a_right.x == this->x && a_right.y == this->y;
+        return a_right.m_X == this->m_X && a_right.m_Y == this->m_Y;
     }
 };

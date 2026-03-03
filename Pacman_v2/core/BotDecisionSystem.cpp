@@ -9,15 +9,15 @@ namespace
 
     static constexpr DecideFunctionPtr g_ai_table[] = {
         &RandomStrategy::decide,         // GhostAIType::Random
-        //&DijkstraChaseStrategy::decide   // GhostAIType::DijkstraChase
+        //&DijkstraStrategy::decide   // GhostAIType::DijkstraChase
     };
 }
 
-void BotDecisionSystem::update(GameState& state) const
+void BotDecisionSystem::update(GameState& a_state) const
 {
-    for (Ghost& ghost : state.m_ghosts)
+    for (Ghost& ghost : a_state.m_Ghosts)
     {
-        const int idx = static_cast<int>(ghost.m_ai_type);
-        ghost.m_direction = g_ai_table[idx](ghost, state);
+        const int idx = static_cast<int>(ghost.m_AiType);
+        ghost.m_Direction = g_ai_table[idx](ghost, a_state);
     }
 }

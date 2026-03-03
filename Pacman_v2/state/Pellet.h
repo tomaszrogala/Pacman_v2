@@ -3,5 +3,5 @@
 
 struct Pellet
 {
-	Position2D m_position;
+    Position2D m_Position;
 };

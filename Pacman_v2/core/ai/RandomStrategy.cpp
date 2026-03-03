@@ -6,26 +6,26 @@ Direction RandomStrategy::decide(Ghost& a_ghost, const GameState& a_state)
 {
     if (is_dead_end(a_ghost, a_state))
     {
-        return get_opposite(a_ghost.m_direction);
+        return get_opposite(a_ghost.m_Direction);
     }
 
     if (!is_crossroad(a_ghost, a_state))
     {
-        return a_ghost.m_direction;
+        return a_ghost.m_Direction;
     }
 
-    std::vector<Direction> valid_dir = {
+    std::vector<Direction> validDir = {
        Direction::Up,
        Direction::Down,
        Direction::Left,
        Direction::Right
     };
 
-    auto opposite = get_opposite(a_ghost.m_direction); //TODO: Prevent from wall directions
-    valid_dir.erase(std::remove(valid_dir.begin(), valid_dir.end(), opposite), valid_dir.end());
+    auto opposite = get_opposite(a_ghost.m_Direction); //TODO: Prevent from wall directions
+    validDir.erase(std::remove(validDir.begin(), validDir.end(), opposite), validDir.end());
 
-    std::uniform_int_distribution<int> distribution(0, valid_dir.size() - 1);
-    return valid_dir[distribution(Random::rng)];
+    std::uniform_int_distribution<int> distribution(0, static_cast<int>(validDir.size()) - 1);
+    return validDir[distribution(Random::rng)];
 }
 
 Direction RandomStrategy::get_opposite(Direction a_direction)
@@ -43,14 +43,14 @@ Direction RandomStrategy::get_opposite(Direction a_direction)
 
 bool RandomStrategy::is_crossroad(Ghost& a_ghost, const GameState& a_state)
 {
-    if (a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x + 1, a_ghost.m_position.y }) &&
-        a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x - 1, a_ghost.m_position.y }))
+    if (a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X + 1, a_ghost.m_Position.m_Y }) &&
+        a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X - 1, a_ghost.m_Position.m_Y }))
     {
         return false;
     }
 
-    if (a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x, a_ghost.m_position.y + 1 }) &&
-        a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x, a_ghost.m_position.y - 1 }))
+    if (a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X, a_ghost.m_Position.m_Y + 1 }) &&
+        a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X, a_ghost.m_Position.m_Y - 1 }))
     {
         return false;
     }
@@ -59,13 +59,13 @@ bool RandomStrategy::is_crossroad(Ghost& a_ghost, const GameState& a_state)
 }
                                                                                                  
 bool RandomStrategy::is_dead_end(Ghost& a_ghost, const GameState& a_state)
-{                                                                         
-    int wall_count = 0;
+{
+    int wallCount = 0;
 
-    wall_count += a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x + 1, a_ghost.m_position.y });
-    wall_count += a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x - 1, a_ghost.m_position.y });
-    wall_count += a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x, a_ghost.m_position.y + 1 });
-    wall_count += a_state.m_map.is_wall(Position2D{ a_ghost.m_position.x, a_ghost.m_position.y - 1 });
+    wallCount += a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X + 1, a_ghost.m_Position.m_Y });
+    wallCount += a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X - 1, a_ghost.m_Position.m_Y });
+    wallCount += a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X, a_ghost.m_Position.m_Y + 1 });
+    wallCount += a_state.m_Map.is_wall(Position2D{ a_ghost.m_Position.m_X, a_ghost.m_Position.m_Y - 1 });
 
-    return wall_count >= 3;
+    return wallCount >= 3;
 }

@@ -14,13 +14,13 @@
 
 class PlayerDecisionSystem;
 
-GameLoop::GameLoop(GameConfig config, std::unique_ptr<IInput> a_input, std::unique_ptr<IRenderer> renderer)
+GameLoop::GameLoop(GameConfig a_config, std::unique_ptr<IInput> a_input, std::unique_ptr<IRenderer> a_renderer)
         : m_player_decision_system(std::make_unique<PlayerDecisionSystem>(std::move(a_input)))
         , m_bot_decision_system(std::make_unique<BotDecisionSystem>())
-        , m_game_state(std::make_unique<GameState>(config))
+        , m_game_state(std::make_unique<GameState>(a_config))
         , m_movement_system(std::make_unique<MovementSystem>())
         , m_collision_system(std::make_unique<CollisionSystem>())
-        , m_renderer(std::move(renderer))
+        , m_renderer(std::move(a_renderer))
 {
 }
 

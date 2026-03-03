@@ -4,6 +4,6 @@
 
 struct Pacman
 {
-    Direction m_direction;
-    Position2D m_position;
+    Direction m_Direction;
+    Position2D m_Position;
 };

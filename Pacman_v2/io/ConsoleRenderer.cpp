@@ -5,9 +5,9 @@
 #include "../state/GameState.h"
 #include "ConsoleRenderer.h"
 
-void ConsoleRenderer::render(const GameState& state)
+void ConsoleRenderer::render(const GameState& a_state)
 {
-    const auto& tiles = state.m_map.m_tiles;
+    const auto& tiles = a_state.m_Map.m_Tiles;
     const int height = static_cast<int>(tiles.size());
     const int width = static_cast<int>(tiles[0].size());
 
@@ -24,12 +24,12 @@ void ConsoleRenderer::render(const GameState& state)
     }
 
     // Draw pacman
-    buffer[state.m_pacman.m_position.y][state.m_pacman.m_position.x] = 'C';
+    buffer[a_state.m_Pacman.m_Position.m_Y][a_state.m_Pacman.m_Position.m_X] = 'C';
 
     // Draw ghosts
-    for (const auto& ghost : state.m_ghosts)
+    for (const auto& ghost : a_state.m_Ghosts)
     {
-        buffer[ghost.m_position.y][ghost.m_position.x] = 'G';
+        buffer[ghost.m_Position.m_Y][ghost.m_Position.m_X] = 'G';
     }
 
     // Clear console

@@ -3,10 +3,10 @@
 
 void MovementSystem::update(GameState& a_state) const
 {
-    try_move(a_state.m_map, a_state.m_pacman.m_direction, a_state.m_pacman.m_position);
+    try_move(a_state.m_Map, a_state.m_Pacman.m_Direction, a_state.m_Pacman.m_Position);
 
-    for (auto& ghost : a_state.m_ghosts)
-        try_move(a_state.m_map, ghost.m_direction, ghost.m_position);
+    for (auto& ghost : a_state.m_Ghosts)
+        try_move(a_state.m_Map, ghost.m_Direction, ghost.m_Position);
 }
 
 bool MovementSystem::try_move(const Map& a_map, Direction a_direction, Position2D& a_position) const
@@ -15,10 +15,10 @@ bool MovementSystem::try_move(const Map& a_map, Direction a_direction, Position2
 
     switch (a_direction)
     {
-    case Direction::Up:    --next.y; break;
-    case Direction::Down:  ++next.y; break;
-    case Direction::Left:  --next.x; break;
-    case Direction::Right: ++next.x; break;
+    case Direction::Up:    --next.m_Y; break;
+    case Direction::Down:  ++next.m_Y; break;
+    case Direction::Left:  --next.m_X; break;
+    case Direction::Right: ++next.m_X; break;
     case Direction::None:  return false;
     }
 

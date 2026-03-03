@@ -6,11 +6,11 @@
 #include <stdexcept>
 #include <vector>
 
-Map MapLoader::load_from_file(const std::string& path)
+Map MapLoader::load_from_file(const std::string& a_path)
 {
-    std::ifstream file(path);
+    std::ifstream file(a_path);
     if (!file)
-        throw std::runtime_error("MapLoader: cannot open file: " + path);
+        throw std::runtime_error("MapLoader: cannot open file: " + a_path);
 
     std::vector<std::string> lines;
     std::string line;
@@ -25,12 +25,12 @@ Map MapLoader::load_from_file(const std::string& path)
     }
 
     if (lines.empty())
-        throw std::runtime_error("MapLoader: map file is empty: " + path);
+        throw std::runtime_error("MapLoader: map file is empty: " + a_path);
 
     // Rectangular validation
     const std::size_t width = lines[0].size();
     if (width == 0)
-        throw std::runtime_error("MapLoader: first line has zero width: " + path);
+        throw std::runtime_error("MapLoader: first line has zero width: " + a_path);
 
     for (std::size_t y = 0; y < lines.size(); ++y)
     {
@@ -44,13 +44,13 @@ Map MapLoader::load_from_file(const std::string& path)
     }
 
     Map map;
-    map.m_tiles.resize(lines.size(), std::vector<Tile>(width, Tile::Empty));
+    map.m_Tiles.resize(lines.size(), std::vector<Tile>(width, Tile::Empty));
 
     for (std::size_t y = 0; y < lines.size(); ++y)
     {
         for (std::size_t x = 0; x < width; ++x)
         {
-            map.m_tiles[y][x] = tile_from_char(lines[y][x]);
+            map.m_Tiles[y][x] = tile_from_char(lines[y][x]);
         }
     }
 

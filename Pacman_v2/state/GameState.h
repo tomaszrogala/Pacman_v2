@@ -14,10 +14,10 @@ namespace Random
 
 struct GameState 
 { 
-    Map m_map;
-    Pacman m_pacman;
-    std::vector<Ghost> m_ghosts;
-    std::vector<Pellet> m_pellets;
+    Map m_Map;
+    Pacman m_Pacman;
+    std::vector<Ghost> m_Ghosts;
+    std::vector<Pellet> m_Pellets;
     
     GameState(const GameConfig& a_config);
 };
