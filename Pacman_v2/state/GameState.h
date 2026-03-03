@@ -5,12 +5,13 @@
 #include "../state/Map.h"
 #include "../state/Pellet.h"
 
-struct GameConfig;
 namespace Random 
 {
     inline std::random_device rd;
     inline std::mt19937 rng{ rd() };
 }
+
+struct GameConfig;
 
 struct GameState 
 { 

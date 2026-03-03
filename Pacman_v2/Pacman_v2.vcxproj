@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="core\ai\DijkstraStrategy.cpp" />
     <ClCompile Include="core\ai\RandomStrategy.cpp" />
     <ClCompile Include="core\CollisionSystem.cpp" />
     <ClCompile Include="core\GameLoop.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="state\GameState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\ai\DijkstraStrategy.h" />
     <ClInclude Include="core\ai\RandomStrategy.h" />
     <ClInclude Include="core\CollisionSystem.h" />
     <ClInclude Include="core\GameLoop.h" />

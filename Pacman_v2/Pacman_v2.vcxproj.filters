@@ -68,6 +68,9 @@
     <ClCompile Include="core\ai\RandomStrategy.cpp">
       <Filter>Source Files\core\ai</Filter>
     </ClCompile>
+    <ClCompile Include="core\ai\DijkstraStrategy.cpp">
+      <Filter>Source Files\core\ai</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="io\ConsoleInput.h">
@@ -131,6 +134,9 @@
       <Filter>Source Files\helpers</Filter>
     </ClInclude>
     <ClInclude Include="core\ai\RandomStrategy.h">
+      <Filter>Source Files\core\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="core\ai\DijkstraStrategy.h">
       <Filter>Source Files\core\ai</Filter>
     </ClInclude>
   </ItemGroup>

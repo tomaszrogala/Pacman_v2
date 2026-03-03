@@ -1,6 +1,7 @@
 #include "BotDecisionSystem.h"
 #include "../state/GameState.h"
 #include "ai/RandomStrategy.h"
+#include "ai/DijkstraStrategy.h"
 
 namespace
 {
@@ -9,7 +10,7 @@ namespace
 
     static constexpr DecideFunctionPtr g_ai_table[] = {
         &RandomStrategy::decide,         // GhostAIType::Random
-        //&DijkstraStrategy::decide   // GhostAIType::DijkstraChase
+        &DijkstraStrategy::decide       // GhostAIType::DijkstraChase
     };
 }
 
@@ -17,7 +18,6 @@ void BotDecisionSystem::update(GameState& a_state) const
 {
     for (Ghost& ghost : a_state.m_Ghosts)
     {
-        const int idx = static_cast<int>(ghost.m_AiType);
-        ghost.m_Direction = g_ai_table[idx](ghost, a_state);
+        ghost.m_Direction = g_ai_table[static_cast<int>(ghost.m_AiType)](ghost, a_state);
     }
 }
